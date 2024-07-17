@@ -1,0 +1,16 @@
+venv/
+Data/
+
+# Archivos de sistema
+*.pyc
+__pycache__/
+
+# Archivos de configuración de IDE
+.vscode/
+.idea/
+
+# Archivos de logs
+*.log
+
+# Archivos de configuración
+.env
