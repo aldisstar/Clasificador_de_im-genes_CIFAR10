@@ -147,22 +147,22 @@ plt.show()
 # Cargar los mejores pesos del modelo
 model.load_weights('best_model.keras')
 
-# Elegir un índice de imagen del conjunto de entrenamiento (por ejemplo, la primera imagen)
+# Elegir la imagen
 image_index = 9
 image = x_train[image_index]
-true_label = np.argmax(y_train[image_index])  # Etiqueta verdadera
+true_label = np.argmax(y_train[image_index])
 
 # Preprocesar la imagen para hacer la predicción
-image = image.reshape(1, 32, 32, 3)  # Añadir dimensión del batch
-image = image / 255.0  # Normalizar
+image = image.reshape(1, 32, 32, 3) 
+image = image / 255.0 
 
 # Hacer la predicción
 prediction = model.predict(image)
-predicted_label = np.argmax(prediction)  # Etiqueta predicha
+predicted_label = np.argmax(prediction)
 
 # Mostrar la imagen y la predicción
-plt.figure(figsize=(2, 2))  # Tamaño de la figura
-plt.imshow(np.squeeze(x_train[image_index]), interpolation='nearest')  # Mostrar la imagen
+plt.figure(figsize=(2, 2)) 
+plt.imshow(np.squeeze(x_train[image_index]), interpolation='nearest') 
 plt.axis('off')
 plt.title(f'Predicción: {predicted_label}, Verdadero: {true_label}')
 plt.show()
